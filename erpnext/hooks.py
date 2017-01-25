@@ -102,7 +102,8 @@ standard_queries = {
 
 doc_events = {
 	"Stock Entry": {
-		"on_submit": "erpnext.stock.doctype.material_request.material_request.update_completed_and_requested_qty",
+		"on_submit": ["erpnext.accounts.doctype.emi_sub_contract.get_sub_contract_entry",
+						"erpnext.stock.doctype.material_request.material_request.update_completed_and_requested_qty",],
 		"on_cancel": "erpnext.stock.doctype.material_request.material_request.update_completed_and_requested_qty"
 	},
 	"User": {
