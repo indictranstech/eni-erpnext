@@ -11,7 +11,8 @@ def get_sub_contract_entry(doc, method):
 			"purpose": "Material Receipt",
 			"company": doc.company,
 			"posting_date": doc.posting_date,
-			"to_warehouse":doc.to_warehouse
+			"to_warehouse":doc.to_warehouse,
+			"reference":doc.name
 		})
 		se.flags.ignore_mandatory = True		
 		bom_no = frappe.db.get_value("BOM", doc.bom_no, "item_name")
